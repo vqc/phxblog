@@ -35,8 +35,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :phxblog, Phxblog.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "phxblog_dev",
-  hostname: "localhost",
+  username: "ymxagqkc",
+  password: "bbU1TaCwmmK1Cg97MTvjPLO1uaFlVLNL",
+  database: "ymxagqkc",
+  hostname: "pellefant-02.db.elephantsql.com",
   pool_size: 10
