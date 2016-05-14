@@ -7,9 +7,15 @@ defmodule Phxblog.User do
     field :password_digest, :string
 
     timestamps
+
+    #Virtual Fields
+    #These fields do not exist in the DB but need to exist as properties
+    #in the User struct
+    field :password, :string, virtual: true
+    field :password_confirmation, :string, virtual: true
   end
 
-  @required_fields ~w(username email password_digest)
+  @required_fields ~w(username email password password_confirmation)
   @optional_fields ~w()
 
   @doc """
@@ -21,5 +27,13 @@ defmodule Phxblog.User do
   def changeset(model, params \\ :empty) do
     model
     |> cast(params, @required_fields, @optional_fields)
+    |> hash_password
   end
+
+  defp hash_password(changeset) do
+    changeset
+    #stub out hashing function
+    |> put_change(:password_digest, "ABCDE")
+  end
+
 end
