@@ -60,6 +60,8 @@ config :logger, level: :info
 #
 #     config :phxblog, Phxblog.Endpoint, root: "."
 
+config :comeonin, bcrypt_log_rounds: 14
+
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
 import_config "prod.secret.exs"

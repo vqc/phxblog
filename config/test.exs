@@ -17,3 +17,6 @@ config :phxblog, Phxblog.Repo,
   database: "phxblog_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+#config comeonin hashing rounds during testing
+config :comeonin, bcrypt_log_rounds: 4
