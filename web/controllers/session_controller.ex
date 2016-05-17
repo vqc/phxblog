@@ -27,6 +27,13 @@ defmodule Phxblog.SessionController do
     end
   end
 
+  def delete(conn, _params) do
+    conn
+    |> delete_session(:current_user)
+    |> put_flash(:info, "Signed out successfully!")
+    |> redirect(to: page_path(conn, :index))
+  end
+
   #the functions get run in order. so this one will run when the user is nil
   #note that there is an error in the create function when the
   #user is nil. so it doesn't seem like this function ever gets called.
